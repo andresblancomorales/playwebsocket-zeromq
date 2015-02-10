@@ -1,0 +1,6 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /:account                          controllers.Application.socket(account: String)
