@@ -1,4 +1,15 @@
-This is your new Play application
+Play Framework WebSocket + ZeroMQ Bridge
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+ZeroMQ socket type: Pull.
+The ZeroMQ URI is hardcoded in WebSocketSupervisor to: tcp://127.0.0.1:5555
+
+To test run ./activator run and it will launch a server on http://127.0.0.1:9000
+
+Connect to the websocket using your own client or test with: http://www.websocket.org/echo.html
+
+Connect to ws://127.0.0.1:9000/{whateveryouwant}
+
+Then send a message to a push ZeroMQ socket to: tcp://127.0.0.1:5555 and the message will be forwarded to your client only if your message is exactly {whateveryouwant}.
+
+I wanted to test message forwarding to specific clients and not broadcast it.
